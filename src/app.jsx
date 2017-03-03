@@ -49,8 +49,10 @@ class App extends React.Component {
 }
 
 const Campers = ({ campers }) => {
-  const List = campers.map((camper, index) => {
-    return <eachCamper key={index} camper={camper} number={index + 1} />
+  var list = campers.map((camper, index) => {
+    return (
+    	<eachCamper key={index} camper={camper} number={index + 1} />
+    );
   });
 	
   return (
@@ -63,7 +65,9 @@ const Campers = ({ campers }) => {
 					<th>All Time Points</th>
 				</tr>
 			</thead>
-			<tbody>{List}</tbody>
+			<tbody>
+				{list}
+			</tbody>
 		</table>
 	);
 }
