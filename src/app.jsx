@@ -41,18 +41,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-			<h1>fCC Leaderboard</h1>
-			<button onClick={() => this.changeDisplay('pastThirtyDays')}>Past 30 Days</button>
-			<button onClick={() => this.changeDisplay('allTime')}>All Time</button>
-	        <Campers campers={this.state[this.state.display]} />
-	      </div>
+			  <h1>fCC Leaderboard</h1>
+			  <button onClick={() => this.changeDisplay('pastThirtyDays')}>Past 30 Days</button>
+			  <button onClick={() => this.changeDisplay('allTime')}>All Time</button>
+	      <Campers campers={this.state[this.state.display]} />
+	    </div>
     );
   }
 }
 
-const Campers = ({
-  campers
-}) => {
+const Campers = ({ campers }) => {
   var list = campers.map((camper, index) => {
     return (
       <eachCamper key={index} camper={camper} number={index + 1} />
@@ -76,10 +74,7 @@ const Campers = ({
   );
 }
 
-const eachCamper = ({
-  camper,
-  number
-}) => {
+const eachCamper = ({ camper, number }) => {
   return (
     <tr>
       <td>{number}</td>
